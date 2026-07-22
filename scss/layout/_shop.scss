@@ -242,3 +242,10 @@
 		text-transform: uppercase;
 	}
 }
+.footer-btn {
+	transition: 450ms ease-in;
+	border: 1px solid var(--color-accent);
+	&:hover {
+		background: none;
+	}
+}

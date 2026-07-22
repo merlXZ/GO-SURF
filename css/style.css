@@ -1973,4 +1973,13 @@ body {
   line-height: 1;
   letter-spacing: 1.05px;
   text-transform: uppercase;
+}
+
+.footer-btn {
+  -webkit-transition: 450ms ease-in;
+  transition: 450ms ease-in;
+  border: 1px solid var(--color-accent);
+}
+.footer-btn:hover {
+  background: none;
 }/*# sourceMappingURL=style.css.map */
