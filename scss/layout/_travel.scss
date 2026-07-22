@@ -84,10 +84,10 @@
 	}
 }
 .slide-travel {
-	background-image: url(assets/images/travel-img.png);
+	background-image: url(../../assets/images/travel-img.png);
 }
 .slide-sleep {
-	background-image: url(assets/images/sleep-image.png);
+	background-image: url(../../assets/images/sleep-image.png);
 }
 
 .slide {
@@ -123,6 +123,10 @@
 		gap: 25px;
 		h2 {
 			@include title-all;
+		}
+		@media screen and (max-width: 392px) {
+			flex-direction: column;
+			gap: 0px;
 		}
 	}
 }
