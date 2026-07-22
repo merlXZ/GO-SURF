@@ -1,0 +1,225 @@
+@use '../base/mixin' as *;
+
+.home {
+	&-slide {
+		position: relative;
+		width: 100%;
+		height: 100vh;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		z-index: 1;
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: radial-gradient(62.00% 62.00% at 43% 49%,rgba(34.04, 34.04, 34.04, 0.43) 0%,rgba(14.63, 14.63, 14.63, 1) 100%)/* Предупреждение: градиент использует вращение, не поддерживаемое CSS, и может работать не так, как ожидается. */;
+			z-index: 1;
+		}
+	}
+	&__content {
+		position: absolute;
+		z-index: 10;
+		right: 5%;
+		bottom: 10%;
+	}
+	&__text {
+		@include title-big;
+		position: absolute;
+		z-index: 2;
+	}
+	&__subtitle {
+		justify-content: end;
+		@include subtitle-with-line;
+		text-align: end;
+	}
+	&__title {
+		color: var(--color-text-main);
+		font-size: var(  --fs-hero-title);
+		font-weight: var(--font-weight-bold);
+		line-height: 1.1;
+		text-transform: uppercase;
+		text-align: start;
+		margin-bottom: 48px;
+	}
+	&__condition {
+		display: flex;
+		flex-direction: column;
+		align-items: end;
+	}
+	&__map {
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 10;
+	}
+}
+.condition {
+	&__subtitle {
+		@include subtitle-with-line;
+		text-align: end;
+		margin-bottom: 8px;
+	}
+	&__title {
+		@include title-all;
+		line-height: 1.4;
+		margin-bottom: 10px;
+	}
+	&__link {
+		transition: 300ms ease-in-out;
+		&:hover {
+			transform: translateX(5px);
+		}
+	}
+}
+.map {
+	&__route {
+		opacity: 0.2;
+	}
+	&__point {
+		position: absolute;
+		top: 18%;
+		right: 30%;
+
+	}
+	&__point-text {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		&:first-child {
+			top: -6%;
+			right: 12%;
+		}
+		&:last-child {
+			bottom: -1%;
+			left: -83%;
+		}
+	}
+	&__arrows {
+		position: absolute;
+		top: 5%;
+		right: 10%;
+		display: flex;
+		gap: 25px;
+		z-index: 15;
+	}
+	@media screen and (max-width: 1250px) {
+			&__point-text {
+				&:last-child {
+					left: -80%;
+				}
+			}
+	}
+	@media screen and (max-width: 1180px) {
+			&__point-text {
+				&:last-child {
+					left: -77%;
+				}
+			}
+	}
+	@media screen and (max-width: 1136px) {
+			&__point-text {
+				&:last-child {
+					left: -74%;
+				}
+			}
+	}
+	@media screen and (max-width: 768px) {
+		&__arrows {
+			top: 20%;
+			right: 4%;
+		}
+	}
+	@media screen and (max-width: 575px) {
+		&__point {
+			display: none;
+		}
+	}
+}
+.swiper-button-prev,
+.swiper-button-next {
+	&:after {
+		display: none;
+	}
+	width: 24px;
+	height: 24px;
+	margin-top: 0 !important;
+	display: flex; 
+	align-items: center;
+	justify-content: center;
+	position: static !important;
+	top: auto !important;
+  left: auto !important;
+  right: auto !important;	
+}
+.swiper-pagination {
+  position: absolute;
+  right: 5%;
+  bottom: 40px !important;
+  left: auto !important;
+  width: auto !important;
+  display: flex;
+  gap: 40px;
+  z-index: 10;
+}
+.swiper-pagination-bullet {
+  width: 200px !important;
+  height: auto !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  opacity: 1 !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  outline: none;
+  cursor: pointer;
+  padding-top: 6px;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+  }
+  .number {
+    font-size: 24px;
+    font-weight: var(--font-weight-bold);
+    color: #fff;
+    transition: opacity 0.3s ease;
+  }
+  .name {
+    font-size: 16px;
+    font-weight: var(--font-weight-light);
+    color: #fff;
+    transition: opacity 0.3s ease;
+  }
+  &-active {
+    &::before {
+      background-color: var(--color-accent);
+    }
+  }
+}
+@media screen and (max-width: 1180px) {
+	.swiper-pagination {
+		gap: 10px;
+	}
+	.swiper-pagination-bullet {
+		width: auto !important;
+		gap: 10px;
+	}
+}
+@media screen and (max-width: 575px) {
+	.swiper-pagination-bullet {
+		.name {
+			display: none;
+		}
+	}
+}

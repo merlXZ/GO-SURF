@@ -1,0 +1,16 @@
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	min-height: 100vh;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+	overflow-x: hidden;
+
+	background-color: var(--background-color);
+	font-family: var(--font-family-main);
+	font-weight: var(--font-weight-regular);
+	color: var(--color-text-main);
+	font-size: var(--fs-body);
+}

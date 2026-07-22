@@ -1,0 +1,52 @@
+@mixin title-big {
+		color: rgba(255, 255, 255, .1);
+		font-size: var(--fs-hero-largest);
+		font-weight: var(--font-weight-bold);
+		line-height: .8;
+		text-transform: uppercase;
+}
+
+@mixin title-with-line {
+	position: relative;
+	color: var(--color-text-main);
+	font-size: var(--fs-hero-title);
+	font-weight: var(--font-weight-bold);
+	line-height: 1.1;
+	text-transform: uppercase;
+	&::before {
+		content: '';
+		position: absolute;
+		width: 50%;
+		height: 1px;
+		top: 0;
+		right: 0;
+		background: var(--color-accent);
+		transform: translateY(-50%);
+	}
+}
+
+@mixin subtitle-with-line {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		color: var(--color-text-main);
+		font-size: var( --fs-display-1);
+		font-weight: var(--font-weight-regular);
+		line-height: 1.1;
+		letter-spacing: 7.33px;
+		text-transform: uppercase;
+		opacity: 0.5;
+		span {
+			position: relative;
+			width: 80px;
+			height: 1px;
+			background: rgba(255, 255, 255, .5);
+		}
+}
+
+@mixin title-all {
+		color: var(--color-text-main);
+		font-size: var( --fs-hero-subtitle);
+		font-weight: var(--font-weight-bold);
+		text-transform: uppercase;
+}

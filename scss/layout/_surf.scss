@@ -1,0 +1,136 @@
+@use '../base/mixin' as *;
+
+.surf {
+	padding-bottom: 150px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	&__item {
+		position: relative;
+		background-repeat: no-repeat;
+		padding: 72px 0px 0px 40px;
+		width: 390px;
+		height: 750px;
+		transition: 500ms ease-out;
+		z-index: 2;
+		&.active {
+			&::before {
+				opacity: .2;
+			}
+			.surf__button {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(28, 33, 33, 1);
+			opacity: 0.85;
+			transition: 500ms ease-out;
+		}
+		&:nth-child(1) {
+			top: 40px;
+			left: 40px;
+		}
+		&:nth-child(3) {
+			top: 80px;
+			left: -40px;
+		}
+		&:nth-child(4) {
+			left: -80px;
+		}
+	}
+	&__content {
+		position: relative;
+		z-index: 3;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	&__item-title {
+		@include title-all;
+		line-height: .9;
+	}
+	&__item-subtitle {
+		position: absolute;
+		bottom: 10%;
+		left: 0px;
+		color: var(--color-text-main);
+		font-size: var(--fs-display-2);
+		font-weight: var(--font-weight-regular);
+		line-height: 1.1;
+		letter-spacing: 8px;
+		text-transform: uppercase;
+		transform: rotate(-90deg);
+		white-space: nowrap;
+		transform-origin: left bottom;
+	}
+	&__button {
+		display: flex;
+		align-items: center;
+		gap: 19px;
+		opacity: 0;
+		visibility: hidden;
+		transition: 400ms ease-out;
+	}
+	&__button-title {
+		@include title-all;
+		line-height: .9;
+	}
+	@media screen and (max-width: 1023px) {
+		flex-direction: column;
+		gap: 30px;
+		&__item {
+			width: 700px;
+			height: 850px;
+			background-size: cover;
+			background-position: center;
+			&:nth-child(1) {
+				top: 0px;
+				left: 0px;
+			}
+			&:nth-child(3) {
+				top: 0px;
+				left: 0px;
+			}
+			&:nth-child(4) {
+				left: 0px;
+			}
+		}
+	}
+	@media screen and (max-width: 767px) {
+		&__item {
+			width: 390px;
+			height: 750px;
+		}
+	}
+	@media screen and (max-width: 420px) {
+		&__item {
+			width: 290px;
+		}
+	}
+}
+.button {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	@include title-all;
+	line-height: .9;
+	background: rgba(74, 246, 205, 1);
+	padding: 17px;
+	transition: 450ms ease-in;
+	&:hover svg{
+		transform: translateX(10px);
+	}
+	svg {
+		transition: 450ms ease-in;
+	}
+}

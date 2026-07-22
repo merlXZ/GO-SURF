@@ -1,0 +1,238 @@
+@use '../base/variables' as var;
+
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 168px;
+	height: 100vh;
+	padding: 102px 0px 45px 0px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	border-right: 1px solid rgba(255, 255, 255, .25);
+	z-index: 100;
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 190px;
+		background: var(--color-accent);
+	}
+	&__logo {
+		position: relative;
+		display: flex;
+		gap: 36px;
+		transform: rotate(-90deg);
+		font-size: var(--fs-hero-light-title);
+		text-transform: uppercase;
+		font-weight: var(--font-weight-bold);
+		margin-bottom: 100px;
+		&::before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 35%;
+			width: 20px;
+			height: 1px;
+			background: var(--color-text-main);
+		}	
+		span {
+			width: 100%;
+		}
+	}
+	&__search {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 20px;
+	}
+	&__search-icon {
+		cursor: pointer;
+	}
+	&__search-input {
+		position: fixed;
+		top: -100px;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 100;
+		width: 400px;
+		border: 1px solid rgba(255, 255, 255, .25);
+		border-radius: 25px;
+		padding: 6px 10px;
+		color: var(--color-text-main);
+		transition: 400ms ease-in-out;
+		font-size: var(--fs-body);
+		backdrop-filter: blur(10px);
+		&:focus {
+			border: 1px solid var(--color-accent);
+		}
+		&.active {
+			top: 30px;
+		}
+	}
+	&__date {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		color: var(--color-text-main);
+		font-size: var(--fs-body);
+		font-weight: var(--font-weight-light);
+		line-height: 1.1;
+		margin-bottom: 30px;
+		span {
+			font-size: var(--fs-hero-large);
+			font-weight: var(--font-weight-bold);
+		}
+	}
+	&__location {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
+	&__location-text {
+		color: var(--color-text-main);
+		font-size: var(--fs-body-xsmall);
+		font-weight: var(--font-weight-light);
+		line-height: 14px;
+		letter-spacing: 1.05px;
+	}
+	&__burger {
+		display: none;
+	}
+	@media screen and (max-width: 768px) {
+		&__burger {
+			display: block;
+			height: 18px;
+			width: 30px;
+			position: relative;
+			cursor: pointer;
+			z-index: 5;
+			span {
+				transition: all 0.3s ease 0s;
+				top: calc(50% - 1px);
+				left: 0;
+				position: absolute;
+				width: 100%;
+				height: 2px;
+				background-color: var(--color-text-main);
+				&:first-child {
+					top: 0;
+				}
+				&:last-child {
+					top: auto;
+					bottom: 0;
+				}
+			}
+			&.active span {
+				transform: scale(0);
+				&:first-child {
+					transform: rotate(-45deg);
+					top: calc(50% - 1px);
+				}
+				&:last-child {
+					transform: rotate(45deg);
+					bottom: calc(50% - 1px);
+				}
+			}
+		}
+		width: 100%;
+		height: 80px;
+		flex-direction: row;
+		padding: 20px;
+		border-right: none;
+		border-bottom: 1px solid rgba(255, 255, 255, .25);
+		background: var(--background-color);
+		&::before {
+			width: 100px;
+			height: 100%;
+		}
+		&__logo {
+			transform: rotate(0);
+			margin-bottom: 0px;
+		}
+		&__bottom {
+			display: flex;
+			align-items: center;
+			gap: 15px;
+		}
+		&__date {
+			display: none;
+			margin-bottom: 0px;
+		}
+		&__search {
+			margin-bottom: 0px;
+		}
+		&__search-input.active {
+			top: 100px;
+		}
+	}
+	@media screen and (max-width: 450px) {
+		&__search-input {
+			width: 300px;
+		}
+		&__location {
+			display: none;
+		}
+	}
+}
+
+.menu {
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 37px;
+	}
+	&__link {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		transition: 300ms ease-out;
+		&:hover {
+			color: var(--color-accent);
+		}
+		img {
+			transition: 300ms ease-out;
+		}
+		&:hover img {
+			transform: rotate(10deg);
+		}
+	}
+	@media screen and (max-width: 768px) {
+		position: fixed;
+		top: 0;
+		left: -100px;
+		width: 100px;
+		height: 100vh;
+		padding: 100px 20px 20px;
+		transition: 400ms ease-out;
+		z-index: 100;
+		border-right: 1px solid rgba(255, 255, 255, .25);
+		background: var(--background-color);
+		&.active {
+			left: 0;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

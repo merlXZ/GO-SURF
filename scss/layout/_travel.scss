@@ -1,0 +1,284 @@
+@use '../base/mixin' as *;
+
+.booking-section {
+	position: relative;
+	overflow-x: hidden;
+	padding-bottom: 350px;
+		@media screen and (max-width: 1023px) {
+			padding-bottom: 50px;
+		}
+	&__top {
+		position: relative;
+		display: inline-block;
+		margin-bottom: 100px;
+	}
+	&__title {
+		margin-left: 50px;
+		@include title-with-line;
+	}
+	&__bigtitle {
+		position: absolute;
+		top: 28%;
+		left: -10%;
+		@include title-big;
+		opacity: .2;
+	}
+	&-slide {
+		padding-right: 77px;
+		background-repeat: no-repeat;
+		min-height: 1000px;
+		display: flex;
+		flex-direction: column;
+	}
+	&__row {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 87px;
+		margin-bottom: 70px;
+	}
+	&__arrows {
+		position: absolute;
+		right: 4%;
+		top: 20%;
+		display: flex;
+		gap: 20px;
+		z-index: 2;
+	}
+	&-button-prev {
+		cursor: pointer;
+	}
+	&-button-next {
+		cursor: pointer;
+	}
+	&__button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 19px;
+	}
+	&__button-title {
+		@include title-all;
+	}
+	&__decor {
+		position: absolute;
+		bottom: 8%;
+		right: -12%;
+		z-index: -1;
+		@media screen and (max-width: 1770px) {
+			bottom: 2%;
+			right: -18%;
+		}
+		@media screen and (max-width: 1220px) {
+			right: -25%;
+		}
+		@media screen and (max-width: 1023px) {
+			display: none;
+		}
+	}
+	&__illustration {
+		position: absolute;
+		bottom: 25%;
+		right: -3%;
+		z-index: 2;
+	}
+}
+.slide-travel {
+	background-image: url(/assets/images/travel-img.png);
+}
+.slide-sleep {
+	background-image: url(/assets/images/sleep-image.png);
+}
+
+.slide {
+	&__content {
+		display: flex;
+		flex-direction: column;
+		align-items: end;
+		justify-content: end;
+		margin-top: 92px
+	}
+	&__content-subtitle {
+		@include subtitle-with-line;
+		line-height: 1.1;
+		margin-bottom: 8px;
+	}
+	&__content-title {
+		@include title-all;
+		line-height: 1.2;
+	}
+		&__info {
+		margin-top: auto;
+		margin-bottom: 77px;
+		margin-left: 136px
+	}
+	&__info-subtitle {
+		@include subtitle-with-line;
+		line-height: .9;
+		margin-bottom: 8px;
+	}
+	&__info-title {
+		display: flex;
+		align-items: center;
+		gap: 25px;
+		h2 {
+			@include title-all;
+		}
+	}
+}
+
+
+.row-info {
+	position: relative;
+	min-height: 196px;
+	padding-left: 40px;
+	&__subtitle {
+		position: absolute;
+		top: 0;
+		left: 0;
+		white-space: nowrap;
+		transform-origin: left top;
+		transform: rotate(-90deg) translateX(-100%);
+		color: rgba(255, 255, 255, .55);
+		font-size: var(--fs-display-2);
+		font-weight: var(--font-weight-regular);
+		line-height: 1.1;
+		letter-spacing: 8px;
+		text-transform: uppercase;
+	}
+	&__title{
+		@include title-all;
+		line-height: .9;
+		margin-left: 18px;
+		span {
+			color: var(--color-text-main);
+			font-size: var(--fs-body-small);
+			font-weight: var(--font-weight-regular);
+			line-height: .9;
+			letter-spacing: 5.25px;
+			text-transform: uppercase;
+		}
+	}
+	&__title2 {
+		@include title-all;
+	}
+	.js-total-price {
+		@include title-all;
+	}
+}
+
+.counter {
+	&__controls {
+		display: flex;
+		align-items: center;
+		justify-content: end;
+		gap: 12px;
+	}
+	&__btn {
+		border: none;
+		color: rgba(74, 246, 205, 1);
+		font-size: 40px;
+		cursor: pointer;
+		&:focus {
+			outline: none;
+		}
+	}
+}
+
+.sleep__hammock {
+	@media screen and (max-width: 1060px) {
+		bottom: 30%;
+	}
+	@media screen and (max-width: 930px) {
+		display: none;
+	}
+}
+	.travel__airplane {
+		&.animate-fly {
+			animation: fly-airplane 1.2s ease-in-out;
+		}
+		@media screen and (max-width: 1060px) {
+			bottom: 30%;
+		}
+		@media screen and (max-width: 930px) {
+			display: none;
+		}
+	}
+@keyframes fly-airplane {
+  0% { 
+    transform: translateY(0) translateX(0); 
+    opacity: 1; 
+  }
+  // Взлет: улетает вправо и вверх, исчезая
+  40% { 
+    transform: translateY(-50px) translateX(-100vw); 
+    opacity: 0; 
+  } 
+  // Телепортация: мгновенно перемещается за левый край экрана (всё еще невидимый)
+  50% { 
+    transform: translateY(-50px) translateX(100vw); 
+    opacity: 0; 
+  } 
+  // Посадка: плавно возвращается на исходную точку
+  100% { 
+    transform: translateY(0) translateX(0); 
+    opacity: 1; 
+  } 
+} 
+
+@media screen and (max-width: 1355px) {
+	.booking-section {
+		&__row {
+			gap: 30px;
+			padding-left: 10px;
+		}
+	}
+	.row-info {
+		padding-left: 10px;
+	}
+}
+@media screen and (max-width: 930px) {
+	.booking-section {
+		&__row {
+			flex-wrap: wrap;
+			margin-bottom: 0px;
+		}
+	}
+}
+@media screen and (max-width: 454px) {
+	.booking-section {
+		&-slide {
+			padding-right: 15px;
+		}
+		.slide{
+			&__info {
+				margin-left: 15px;
+			}
+		}
+	}
+}
+@media screen and (max-width: 424px) {
+	.booking-section {
+		&__row {
+			flex-direction: column;
+			gap: 2px;
+			padding-left: 0px;
+			margin-bottom: 30px;
+		}
+	}
+	.row-info {
+		display: flex;
+		align-items: center;
+		flex-direction: column-reverse;
+		min-height: 120px;
+		gap: 20px;
+		&__subtitle {
+			position: static;
+			transform: rotate(0deg);
+		}
+	}
+}
+
+
+
+
