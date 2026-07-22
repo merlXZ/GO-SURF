@@ -84,10 +84,10 @@
 	}
 }
 .slide-travel {
-	background-image: url(/assets/images/travel-img.png);
+	background-image: url(assets/images/travel-img.png);
 }
 .slide-sleep {
-	background-image: url(/assets/images/sleep-image.png);
+	background-image: url(assets/images/sleep-image.png);
 }
 
 .slide {
@@ -209,17 +209,15 @@
     transform: translateY(0) translateX(0); 
     opacity: 1; 
   }
-  // Взлет: улетает вправо и вверх, исчезая
   40% { 
     transform: translateY(-50px) translateX(-100vw); 
     opacity: 0; 
   } 
-  // Телепортация: мгновенно перемещается за левый край экрана (всё еще невидимый)
   50% { 
     transform: translateY(-50px) translateX(100vw); 
     opacity: 0; 
   } 
-  // Посадка: плавно возвращается на исходную точку
+	
   100% { 
     transform: translateY(0) translateX(0); 
     opacity: 1; 
