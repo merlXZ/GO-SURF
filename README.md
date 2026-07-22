@@ -15,7 +15,7 @@ A responsive landing page for a surf shop. The project was built from scratch (e
 * **Responsive Design:** Full layout adaptation for mobile devices, tablets, and desktops.
 * **Attention to Detail:** Implemented smooth CSS animations, transitions, and interactive hover effects for buttons and cards.
 
-## 🛠 Что использовалось
+## 🛠 Tech Stack
 
 * **HTML5** (Semantic Markup)
 * **SCSS / CSS3** (Flexbox, CSS Grid, Variables, Swiper)
