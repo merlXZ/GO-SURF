@@ -117,35 +117,7 @@
 		right: 17%;
 	}
 	@media screen and (max-width: 1023px) {
-			&__map-decor {
-				display: none;
-			}
-			&__map-coordinates {
-				display: none;
-			}
-			&__map-point {
-				position: static;
-			}
-				&__map-wrapper {
-				flex-wrap: wrap;
-				gap: 20px;
-			}
-			&__map {
-				background: none;
-			}
-			&__arrows {
-				margin-top: 30px;
-			}
-	}
-	@media screen and (max-width: 767px) {
-		&__header {
-			flex-direction: column;
-		}
-	}
-	@media screen and (max-width: 500px) {
-		&__text {
-			margin-left: 100px;
-		}
+		display: none;
 	}
 
 }
@@ -219,12 +191,6 @@
 		font-weight: var(--font-weight-regular);
 		line-height: 1.1;
 		margin-bottom: 31px;
-	}
-	@media screen and (max-width: 1023px) {
-		&__card {
-			opacity: 1;
-			visibility: visible;
-		}
 	}
 }
 

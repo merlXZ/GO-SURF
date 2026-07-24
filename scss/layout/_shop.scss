@@ -2,6 +2,9 @@
 
 .shop {
 	margin-bottom: 307px;
+	@media screen and (max-width: 748px) {
+		margin-bottom: 80px;
+	}
 	 &__top {
 		position: relative;
 		display: inline-block;
@@ -30,8 +33,12 @@
 		align-items: center;
 		justify-content: space-around;
 		gap: 20px;
+		padding: 20px 10px;
 		@media screen and (max-width: 850px) {
 			flex-wrap: wrap;
+		}
+		@media screen and (max-width: 550px) {
+			padding-top: 50px;
 		}
 	}
 	&__content-button {
@@ -66,9 +73,20 @@
 			font-size: 18px;
 			vertical-align: super;
 		}
+		@media screen and (max-width: 391px) {
+			margin-bottom: 10px;
+		}
 	}
 	&__board {
 		position: relative;
+	}
+	&__board-img {
+		@media screen and (max-width: 575px) {
+			width: 150px;
+		}
+		@media screen and (max-width: 391px) {
+			width: 100px;
+		}
 	}
 	&__board-hotspot {
 		position: absolute;

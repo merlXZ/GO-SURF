@@ -31,9 +31,8 @@
 		flex-direction: column;
 	}
 	&__row {
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
 		gap: 87px;
 		margin-bottom: 70px;
 	}
@@ -125,6 +124,7 @@
 			@include title-all;
 		}
 		@media screen and (max-width: 392px) {
+			align-items: start;
 			flex-direction: column;
 			gap: 0px;
 		}
@@ -165,6 +165,7 @@
 	}
 	&__title2 {
 		@include title-all;
+		margin-left: 18px
 	}
 	.js-total-price {
 		@include title-all;
@@ -238,13 +239,27 @@
 	.row-info {
 		padding-left: 10px;
 	}
+	 .sleep .row-info {
+		padding-left: 30px;
+	}
 }
-@media screen and (max-width: 930px) {
+@media screen and (max-width: 900px) {
 	.booking-section {
 		&__row {
-			flex-wrap: wrap;
-			margin-bottom: 0px;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 10px;
 		}
+	}
+	 .sleep .row-info {
+		padding-left: 10px;
+	}
+	.counter__controls {
+		justify-content: start;
+		margin-left: 18px;
+	}
+	.slide__info {
+		margin-bottom: 30px;
+		margin-left: 20px;
 	}
 }
 @media screen and (max-width: 454px) {
@@ -255,6 +270,7 @@
 		.slide{
 			&__info {
 				margin-left: 15px;
+				margin-bottom: 0px;
 			}
 		}
 	}
@@ -262,7 +278,7 @@
 @media screen and (max-width: 424px) {
 	.booking-section {
 		&__row {
-			flex-direction: column;
+			grid-template-columns: repeat(1, 1fr);
 			gap: 2px;
 			padding-left: 0px;
 			margin-bottom: 30px;
